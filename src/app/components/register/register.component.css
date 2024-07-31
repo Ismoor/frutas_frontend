@@ -1,0 +1,47 @@
+.btn {
+  background-color: #fc8710; /* Naranja */
+  color: #fff;
+  padding: 10px 40px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block; /* Para que el botón no ocupe todo el ancho del contenedor */
+  margin-top: 20px; /* Espacio entre el párrafo y el botón */
+  font-size: 1.5em; /* Tamaño de letra igual al de "FRUIT SAFE" */
+}
+
+.btn:hover {
+  background-color: #75a624; /* Verde al pasar el ratón */
+}
+
+.container {
+  margin-top: 40px; /* Ajusta este valor según sea necesario */
+}
+
+.modal {
+  display: none;
+}
+  
+.modal.show {
+  display: block;
+  background: rgba(0,0,0,0.5);
+}
+  
+.d-block {
+  display: block !important;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header .close {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}

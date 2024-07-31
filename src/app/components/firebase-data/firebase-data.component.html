@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center vh-auto">
+    <h1>Datos de Firebase</h1>
+    <div *ngIf="loading" class="spinner-border" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+    <div *ngIf="!loading && firebaseData.length === 0">
+      <p>No hay datos disponibles de Firebase.</p>
+    </div>
+    <div *ngIf="!loading && firebaseData.length > 0">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Valores del Sensor</th>
+            <th>Voltaje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of firebaseData">
+            <td>{{ data.id }}</td>
+            <td>{{ data.sensorValue }}</td>
+            <td>{{ data.voltage }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <h2>Agregar Fruta</h2>
+      <form (ngSubmit)="onAddFruta()">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre de la Fruta</label>
+          <input type="text" id="nombre" class="form-control" [(ngModel)]="nombreFruta" name="nombreFruta" required>
+        </div>
+        <button type="submit" class="btn">Guardar Fruta</button>
+      </form>
+      <div *ngIf="successMessage" class="alert alert-success mt-3">
+        {{ successMessage }}
+      </div>
+    </div>
+  </div>
+</div>

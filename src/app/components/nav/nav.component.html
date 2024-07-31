@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="logo-container">
+        <img src="assets/fruiticon.png" alt="Company Logo" class="logo">
+        <div class="logo-text">
+            <span class="main green">FRUIT</span>
+            <span class="main orange">SAFE</span>
+        </div>
+    </div>
+    <nav>
+        <div *ngIf="!isAuthenticated">
+            <ul>
+                <li><a routerLink="/home" class="main orange">Home</a></li>
+                <li><a routerLink="/aboutUs" class="main green">About Us</a></li>
+                <li><a routerLink="/login" class="main orange">Login</a></li>
+            </ul>
+        </div>
+        <div *ngIf="isAuthenticated">
+            <ul *ngIf="userProfile === 1">
+                <li><a routerLink="/updateInfo" class="main green">Actualizar información</a></li>
+                <li><a routerLink="/updateUser" class="main orange">Lista de usuarios</a></li>
+                <li><a routerLink="/registro" class="main green">Registro de usuarios</a></li>
+                <li><a routerLink="/login" class="main orange" (click)="logOut()">Cerrar sesión</a></li>
+            </ul>
+            <ul *ngIf="userProfile === 2">
+                <li><a routerLink="/changePassword" class="main orange">Cambiar contraseña</a></li>
+                <li><a routerLink="/firebase-data" class="main green">Datos Firebase</a></li>
+                <li><a routerLink="/info" class="main orange">Información</a></li>
+                <li><a routerLink="/operador" class="main green">Operador</a></li>
+                <li><a routerLink="/login" class="main orange" (click)="logOut()">Cerrar sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>

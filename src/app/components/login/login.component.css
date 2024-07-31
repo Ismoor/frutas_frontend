@@ -1,0 +1,15 @@
+.btn {
+    background-color: #fc8710; /* Naranja */
+    color: #fff;
+    padding: 10px 40px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block; /* Para que el botón no ocupe todo el ancho del contenedor */
+    margin-top: 20px; /* Espacio entre el párrafo y el botón */
+    font-size: 1.5em; /* Tamaño de letra igual al de "FRUIT SAFE" */
+}
+
+.btn:hover {
+    background-color: #75a624; /* Verde al pasar el ratón */
+}

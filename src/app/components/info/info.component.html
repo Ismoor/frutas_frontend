@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center vh-auto">
+    <div *ngFor="let info of infoList">
+      <h2>{{ info.titulo }}</h2>
+      <p>{{ info.descripcion }}</p>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <h3>Frutas Guardadas</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fruta of frutas">
+            <td>{{ fruta.nombre }}</td>
+            <td>{{ getFrutaEstado(fruta.sensorValue) }}</td>
+            <td>
+              <button class="btn_list" (click)="confirmarEliminar(fruta)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" [ngClass]="{'show d-block': showModal}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar Eliminación</h5>
+        <button type="button" class="close" (click)="cerrarModal()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que deseas eliminar esta fruta?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" (click)="cerrarModal()">Cancelar</button>
+        <button type="button" class="btn" (click)="eliminarFruta()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>

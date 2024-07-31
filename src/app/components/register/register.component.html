@@ -1,0 +1,66 @@
+<div class="container mt-5">
+  <div class="row justify-content-center align-items-center vh-100">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center">Registro</h5>
+          <form (ngSubmit)="confirmarRegistro()">
+            <div class="mb-3">
+              <label for="nombres" class="form-label">Nombres</label>
+              <input type="text" class="form-control" id="nombres" name="nombres" [(ngModel)]="nombres" placeholder="Ingrese los nombres" required/>
+            </div>
+            <div class="mb-3">
+              <label for="cedula" class="form-label">Cédula</label>
+              <input type="text" class="form-control" id="cedula" name="cedula" [(ngModel)]="cedula" placeholder="Ingrese la cédula" required/>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="reg_email" placeholder="Ingrese el correo electrónico" required/>
+              <div *ngIf="!emailValido" class="text-danger">Correo electrónico inválido. Debe ser del dominio ups.edu.ec.</div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="password" name="password" [(ngModel)]="reg_password" placeholder="Ingrese la contraseña" required minlength="6" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"/>
+              <div *ngIf="!passwordValida" class="text-danger">La contraseña debe tener al menos 6 caracteres y contener al menos una letra y un número.</div>
+            </div>
+            <div class="mb-3">
+              <label for="perfil" class="form-label">Perfil</label>
+              <select class="form-control" id="perfil" name="perfil" [(ngModel)]="perfil" required>
+                <option value="1">Administrador</option>
+                <option value="2">Operador</option>
+              </select>
+            </div>
+            <button type="submit" class="btn w-100" >Registrar usuario</button>
+          </form>
+          <div *ngIf="registroRealizado" class="alert alert-success mt-3">
+              <strong>¡Usuario Registrado!</strong> El usuario ha sido registrado exitosamente.
+          </div>
+          <div *ngIf="mensajeError" class="alert alert-danger mt-3">
+              <strong>Error:</strong> {{ mensajeError }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de confirmación -->
+<div class="modal" tabindex="-1" [ngClass]="{'show d-block': showModal}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar Registro</h5>
+        <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que deseas registrar este usuario?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" (click)="closeModal()">Cancelar</button>
+        <button type="button" class="btn" (click)="registro()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>

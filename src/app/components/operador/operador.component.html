@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center vh-100">
+    <div class="col-md-6">
+      <p>
+        En este proyecto, estamos desarrollando un sistema de monitoreo de 
+        calidad del aire en frutas utilizando un microcontrolador ESP32, un 
+        sensor de gas MQ-135 y la plataforma Firebase para la gestión y almacenamiento de datos. 
+        La finalidad del sistema es detectar la presencia de gases que se emiten durante la descomposición de frutas y 
+        registrar estos datos en una base de datos en tiempo real. 
+      </p>
+      <button class="btn" (click)="downloadPDF()">Guardar como PDF</button><br>
+      <button class="btn" (click)="downloadExcel()">Guardar como Excel</button>
+    </div>
+    <div class="col-md-6">
+      <h5 class="card-title text-center">Gráfico</h5>
+      <ngx-charts-line-chart
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="chartData"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [autoScale]="autoScale">
+      </ngx-charts-line-chart>
+      <p>Desde los 100 a los 200 la fruta está bien, y de los 300 para arriba significa que la fruta está en proceso de descomposición.</p>
+    </div>
+  </div>
+</div>
