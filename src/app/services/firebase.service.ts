@@ -7,7 +7,7 @@ import { Firebase } from '../models/firebase';
   providedIn: 'root'
 })
 export class FirebaseService {
-  private firebaseUrl = 'http://192.168.17.112:3030/api/v1/firebase';
+  private firebaseUrl = 'http://18.220.242.169:3030/api/v1/firebase';
 
   constructor(private http: HttpClient) {}
 

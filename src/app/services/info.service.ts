@@ -7,7 +7,7 @@ import { Info } from '../models/info';
   providedIn: 'root'
 })
 export class InfoService {
-  private apiUrl = 'http://192.168.17.112:3030/api/v1/info';
+  private apiUrl = 'http://18.220.242.169:3030/api/v1/info';
 
   constructor(private http: HttpClient) { }
 

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FrutaService {
-  private apiURL = 'http://192.168.17.112:3030/api/v1';
+  private apiURL = 'http://18.220.242.169:3030/api/v1';
 
   constructor(private http: HttpClient) { }
 
