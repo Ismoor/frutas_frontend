@@ -1,0 +1,14 @@
+{
+  "routes": [
+    "/aboutUs",
+    "/changePassword",
+    "/firebase-data",
+    "/home",
+    "/info",
+    "/login",
+    "/operador",
+    "/registro",
+    "/updateInfo",
+    "/updateUser"
+  ]
+}
